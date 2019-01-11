@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/server/bootangular.iml" filepath="$PROJECT_DIR$/server/bootangular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/bootangular-client.iml" filepath="$PROJECT_DIR$/client/bootangular-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootangular-parent.iml" filepath="$PROJECT_DIR$/bootangular-parent.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,98 @@
+<div class="container" >
+  <br>
+<form class="form-inline" #form="ngForm" (ngSubmit)="submitForm(form.value)" >
+
+  <div class="form-group">
+    <label  for="name" class="mr-sm-2"><span class="small">Name</span></label>
+    <input type="text" class="form-control mb-2 mr-sm-2" style="font-size: small" id="name" name="name" placeholder="name" ngModel>
+  </div>
+
+  <div class="form-group">
+    <label  for="city" class="mr-sm-2"><span class="small">City</span></label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="city" placeholder="city" name="city" style="font-size: small" autocomplete="off" ngModel>
+  </div>
+
+  <div class="form-group">
+    <label  for="dept" class="mr-sm-2"><span class="small">Dept</span> </label>
+    <select class="form-control mb-2 mr-sm-2" id="dept" style="font-size: small" name="dept" autocomplete="off" ngModel>
+
+      <option *ngFor="let dept of departments" [value]="dept.value">{{dept.label}}</option>
+      <!--
+      <option selected value="">Pls Select</option>
+      <option value="HR">HR</option>
+      <option value="IT">IT</option>
+      <option value="Acctg">Accounting</option>
+      <option value="Sales">Sales</option>
+      <option value="CSR">CSR</option>
+      -->
+    </select>
+  </div>
+
+  <div class="form-group" >
+    <label  for="gender" class="mr-sm-2"><span class="small" >Gender</span> </label>
+    <select class="form-control mb-2 mr-sm-2" id="gender" name="gender" style="font-size: small" autocomplete="off" ngModel>
+      <option value="" selected>Pls Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary  mb-2">Search</button>
+</form>
+</div>
+
+<hr>
+
+<p-table [columns]="cols" [value]="employees"  [paginator]="true" [rows]="10" #dt exportFilename="employees"  [responsive]="true" *ngIf="employees.length>0">
+
+  <ng-template pTemplate="caption">
+   Search Results
+  </ng-template>
+
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+        <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData>
+    <tr [pSelectableRow]="rowData">
+      <td>
+        {{rowData.id}}
+      </td>
+
+      <td>
+        {{rowData.name}}
+      </td>
+      <td>
+        {{rowData.city}}
+      </td>
+      <td>
+        {{rowData.gender}}
+      </td>
+      <td>
+        {{rowData.department}}
+      </td>
+      <td>
+        {{rowData.hireDate | date}}
+      </td>
+
+    </tr>
+  </ng-template>
+
+
+  <ng-template pTemplate="summary" let-rowData>
+    <div style="text-align:left">
+      <button type="button" pButton icon="fa fa-file"  label="CSV" (click)="dt.exportCSV()"></button>
+    </div>
+  </ng-template>
+
+</p-table>
+
+<div *ngIf="employees.length==0">
+  <p class="small text-primary text-center font-weight-bold ">No employee data found.Pls search and try again.</p>
+
+</div>

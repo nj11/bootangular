@@ -1,0 +1,25 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Anwar",
+      "city": "Bombay",
+      "gender": "Male",
+      "department": "IT"
+    },
+    {
+      "id": 2,
+      "name": "Joy",
+      "city": "Delhi",
+      "gender": "Male",
+      "department": "DB"
+    },
+    {
+      "id": 3,
+      "name": "Jack",
+      "city": "Kolkata",
+      "gender": "Male",
+      "department": "Web"
+    }
+  ]
+}
