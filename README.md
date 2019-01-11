@@ -57,3 +57,12 @@ The Application runs on **localhost:8080** and the application runs in a embedde
 
 **pom.xml** : This is multimodule pom. This pom in turn executes the pom within the client and the server folders
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/17017086/51055985-338b4e00-15a7-11e9-9088-2c7bea5542e7.png)
+
+![image](https://user-images.githubusercontent.com/17017086/51056018-46058780-15a7-11e9-89e4-b2f8e827209d.png)
+
+![image](https://user-images.githubusercontent.com/17017086/51056028-5453a380-15a7-11e9-8f5c-c179121fbd8b.png)
+       
+      
